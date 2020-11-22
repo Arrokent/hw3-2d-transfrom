@@ -14,7 +14,7 @@
     <script id="vertex-shader" type="x-shader/x-vertex">
         // attribute每顶点各用的属性，IN variable
         attribute vec2 vPosition;
-        
+
         // uniform所用顶点公用的数据，IN variable
         uniform mat3 u_CompositeMatrix;
         uniform int u_Flag; // 画坐标还是画图的标志
@@ -26,9 +26,9 @@
         void main() {
             if(u_Flag == 1){ // 绘制坐标轴
 			    //TODO: 顶点2D笛卡尔坐标转齐次坐标
-                
+
 				//TODO: 顶点作用3*3组合变换矩阵算子，计算出变换后的2D顶点齐次坐标
-                
+
 				//TODO: 将变换后的2D顶点齐次坐标转3D齐次坐标输出
                 gl_Position = vec4(vPosition, 0.0, 1.0); // 完成作业时应删除本句
             }

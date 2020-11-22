@@ -61,6 +61,7 @@ window.onload = function() {
     u_Flag = gl.getUniformLocation(program, "u_Flag"); // 当前图元标志
      
     render(); // 调用绘制函数
+    console.log(typeof vPosition);
 }
 
 /* 绘制函数render */
