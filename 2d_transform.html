@@ -10,7 +10,7 @@
             height: calc(100vh - 40px);
         }
     </style>
-    
+
     <script id="vertex-shader" type="x-shader/x-vertex">
         // attribute每顶点各用的属性，IN variable
         attribute vec2 vPosition;
@@ -26,11 +26,15 @@
         void main() {
             if(u_Flag == 1){ // 绘制坐标轴
 			    //TODO: 顶点2D笛卡尔坐标转齐次坐标
+                //const temp = vec3( vPosition, 1.0)
 
 				//TODO: 顶点作用3*3组合变换矩阵算子，计算出变换后的2D顶点齐次坐标
+                //const temp2 = vec3( vPosition, 1.0) * u_CompositeMatrix
 
 				//TODO: 将变换后的2D顶点齐次坐标转3D齐次坐标输出
-                gl_Position = vec4(vPosition, 0.0, 1.0); // 完成作业时应删除本句
+				gl_Position = vec4(temp2, 1.0)
+
+                // gl_Position = vec4(vPosition, 0.0, 1.0); // 完成作业时应删除本句
             }
             else{ // 绘制坐标轴
                 gl_Position = vec4(vPosition, 0.0, 1.0);
@@ -48,7 +52,7 @@
             gl_FragColor = fColor; 
         }
     </script>
-    
+
     <script type="text/javascript" src="./Common/webgl-utils.js"></script>
     <script type="text/javascript" src="./Common/initShaders.js"></script>
     <script type="text/javascript" src="./Common/MV.js"></script>

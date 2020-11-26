@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32e419bc-b411-4c03-afda-b1bcc447b414" name="Default Changelist" comment="">
+    <list default="true" id="32e419bc-b411-4c03-afda-b1bcc447b414" name="Default Changelist" comment="ai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2d_transform.html" beforeDir="false" afterPath="$PROJECT_DIR$/2d_transform.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2d_transform.js" beforeDir="false" afterPath="$PROJECT_DIR$/2d_transform.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -34,12 +34,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606050333867</updated>
-      <workItem from="1606050335526" duration="4844000" />
+      <workItem from="1606050335526" duration="4855000" />
+      <workItem from="1606217068814" duration="72000" />
+      <workItem from="1606388026493" duration="3033000" />
     </task>
+    <task id="LOCAL-00001" summary="ai">
+      <created>1606057257540</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606057257540</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ai" />
+    <option name="LAST_COMMIT_MESSAGE" value="ai" />
   </component>
   <component name="WindowStateProjectService">
     <state x="907" y="482" key="Github.ShareDialog" timestamp="1606051765890">
@@ -50,6 +64,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="850" y="286" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606051774264" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1606391086007">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606391086007" />
     <state x="724" y="304" width="672" height="678" key="search.everywhere.popup" timestamp="1606051358947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
