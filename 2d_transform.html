@@ -26,13 +26,13 @@
         void main() {
             if(u_Flag == 1){ // 绘制坐标轴
 			    //TODO: 顶点2D笛卡尔坐标转齐次坐标
-                //const temp = vec3( vPosition, 1.0)
+                vec3 temp1 = vec3( vPosition, 1.0);
 
 				//TODO: 顶点作用3*3组合变换矩阵算子，计算出变换后的2D顶点齐次坐标
-                //const temp2 = vec3( vPosition, 1.0) * u_CompositeMatrix
+                vec3 temp2 =  u_CompositeMatrix * temp1;
 
 				//TODO: 将变换后的2D顶点齐次坐标转3D齐次坐标输出
-				gl_Position = vec4(temp2, 1.0)
+				gl_Position = vec4(temp2, 1.0);
 
                 // gl_Position = vec4(vPosition, 0.0, 1.0); // 完成作业时应删除本句
             }

@@ -61,7 +61,6 @@ window.onload = function() {
     u_Flag = gl.getUniformLocation(program, "u_Flag"); // 当前图元标志
      
     render(); // 调用绘制函数
-    console.log(typeof vPosition);
 }
 
 /* 绘制函数render */
@@ -158,8 +157,9 @@ window.onkeydown = function(e){
             return;
     }   
     // TODO: 根据当前变换CurrentInteractionMatrix和累积变换矩阵CTM得到绘制该帧的组合变换矩阵
-	
-	// 交互后需要调用render重新绘制
+
+    CTM = mult(CurrentInteractionMatrix, CTM);
+    // 交互后需要调用render重新绘制
     render();
 }
 
@@ -171,6 +171,7 @@ function reset(){
 }
 
 /*********************************** X, Y方向的平移*******************************/
+
 function incX(){
     CurrentInteractionMatrix = mat3(
         1, 0, 0.1,
@@ -207,61 +208,126 @@ function decY(){
 /***************************************X,Y方向的缩放****************************/
 function xLarger(){
     // TODO: 构造缩放矩阵，缩放倍数任意
+    CurrentInteractionMatrix = mat3(
+        1.1, 0, 0,
+        0, 1, 0,
+        0, 0, 1
+    );
 }
 
 function xSmaller(){
     // TODO: 构造缩放矩阵，缩放倍数任意
+    CurrentInteractionMatrix = mat3(
+        0.9, 0, 0,
+        0, 1, 0,
+        0, 0, 1
+    );
 }
 
 function yLarger(){
     // TODO: 构造缩放矩阵，缩放倍数任意
+    CurrentInteractionMatrix = mat3(
+        1, 0, 0,
+        0, 1.1, 0,
+        0, 0, 1
+    );
 }
 
 function ySmaller(){
     // TODO: 构造缩放矩阵，缩放倍数任意
+    CurrentInteractionMatrix = mat3(
+        1, 0, 0,
+        0, 0.9, 0,
+        0, 0, 1
+    );
 }
 
 /**********************绕原点的旋转，顺时针和逆时针旋转******************************/
 function rotate(){
     var ROTATE_FACTOR = 10;  // 旋转角度
     // TODO: 构造旋转矩阵（顺时针旋转），旋转量为ROTATE_FACTOR，角度需要转换为弧度代入三角函数计算
+    CurrentInteractionMatrix = mat3(
+        Math.cos( radians(ROTATE_FACTOR) ), Math.sin( radians(ROTATE_FACTOR) ), 0,
+        -Math.sin( radians(ROTATE_FACTOR) ), Math.cos( radians(ROTATE_FACTOR) ), 0,
+        0, 0, 1
+    );
 }
 
 function rotateCounter(){
     var ROTATE_FACTOR = 10;  // 旋转角
-    // 提示：构造旋转矩阵（逆时针旋转），旋转量为ROTATE_FACTOR，角度需要转换为弧度代入三角函数计算
+    // TODO:构造旋转矩阵（逆时针旋转），旋转量为ROTATE_FACTOR，角度需要转换为弧度代入三角函数计算
+    CurrentInteractionMatrix = mat3(
+        Math.cos( radians(ROTATE_FACTOR) ), -Math.sin( radians(ROTATE_FACTOR) ), 0,
+        Math.sin( radians(ROTATE_FACTOR) ), Math.cos( radians(ROTATE_FACTOR) ), 0,
+        0, 0, 1
+    );
 }
 
 
 /**************************** X轴，Y轴，原点的 反射（即对称） ****************************/
 function xReflex(){
     // TODO: 构造反射矩阵
+    CurrentInteractionMatrix = mat3(
+        1, 0, 0,
+        0, -1, 0,
+        0, 0, 1
+    );
 }
 
 function yReflex(){
     // TODO: 构造反射矩阵
+    CurrentInteractionMatrix = mat3(
+        -1, 0, 0,
+        0, 1, 0,
+        0, 0, 1
+    );
 }
 
 function oReflex(){
     // TODO: 构造反射矩阵
+    CurrentInteractionMatrix = mat3(
+        -1, 0, 0,
+        0, -1, 0,
+        0, 0, 1
+    );
 }
 /********************************************* X, Y方向的错切*********************************/
 function xShearInc(){
     var SHEAR_FACTOR = 0.1;
     // TODO：构造错切矩阵，错切因子为SHEAR_FACTOR
+    CurrentInteractionMatrix = mat3(
+        1, 0, 0,
+        SHEAR_FACTOR, 1, 0,
+        0, 0, 1
+    );
 }
 
 function xShearDec(){
     var SHEAR_FACTOR = 0.1;
     // TODO：构造错切矩阵，错切因子为SHEAR_FACTOR
+    CurrentInteractionMatrix = mat3(
+        1, 0, 0,
+        -SHEAR_FACTOR, 1, 0,
+        0, 0, 1
+    );
 }
 
 function yShearInc(){
     var SHEAR_FACTOR = 0.1;
     // TODO：构造错切矩阵，错切因子为SHEAR_FACTOR
+    CurrentInteractionMatrix = mat3(
+        1, SHEAR_FACTOR, 0,
+        0, 1, 0,
+        0, 0, 1
+    );
 }
 
 function yShearDec(){
     var SHEAR_FACTOR = 0.1;
     // TODO：构造错切矩阵，错切因子为SHEAR_FACTOR
+    CurrentInteractionMatrix = mat3(
+        1, -SHEAR_FACTOR, 0,
+        0, 1, 0,
+        0, 0, 1
+    );
 }
